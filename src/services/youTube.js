@@ -2,6 +2,7 @@ angular.module('video-player')
 .service('youTube', function($window, $http){
   // TODO
   
+  //this.debouncedSearch = $window.debounce(this.search, 500);
   this.search = function(query, callback) {
       $http({
         url: 'https://www.googleapis.com/youtube/v3/search',

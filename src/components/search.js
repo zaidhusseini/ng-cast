@@ -5,12 +5,14 @@ angular.module('video-player')
   bindings: {
     searchResults: '<'
   },
-
-  controller: function(youTube){
-    
+  
+  controller: function(youTube, $window){
+    this.debouncedSearch = $window.debounce(youTube.search, 500);
     this.result = (event) => {
       if (event === undefined || event.keyCode === 13) {
         youTube.search(this.searchQuery, this.searchResults);
+      } else{
+        this.debouncedSearch(this.searchQuery, this.searchResults);
       }
     };
   
