@@ -8,7 +8,7 @@ angular.module('video-player')
 
   controller: function(youTube){
     
-    this.onQuery = (event) => {
+    this.result = (event) => {
       if (event === undefined || event.keyCode === 13) {
         youTube.search(this.searchQuery, this.searchResults);
       }
