@@ -1,11 +1,11 @@
 angular.module('video-player')
 .component('videoList', {
   bindings: {
-    videos: '<'
+    videos: '<',
+    onClick: '<'
   },
 
   controller: function($window){
-    // this.videos = $window.exampleVideoData;
   },
   
 
